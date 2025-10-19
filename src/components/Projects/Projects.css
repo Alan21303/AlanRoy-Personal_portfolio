@@ -1,0 +1,281 @@
+/* ===================== Base ===================== */
+.projects-section {
+  padding: clamp(60px, 10vw, 100px) clamp(5%, 8vw, 10%);
+  color: #fff;
+  background-color: #121212;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient glow line */
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 132, 0, 0) 0%,
+    rgba(255, 132, 0, 0.3) 30%,
+    #ff8400 50%,
+    rgba(255, 132, 0, 0.3) 70%,
+    rgba(255, 132, 0, 0) 100%
+  );
+}
+
+/* ===================== Title ===================== */
+.projects-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  color: #ff8400;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.animate-title {
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+/* ===================== Projects Grid ===================== */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(260px, 35vw, 420px), 1fr)
+  );
+  gap: clamp(20px, 3vw, 40px);
+}
+
+/* ===================== Project Card ===================== */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: clamp(16px, 2vw, 25px);
+  transition: all 0.5s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Visible on scroll */
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+/* Hover effect */
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 132, 0, 0.05) 0%,
+    transparent 70%
+  );
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 132, 0, 0.2);
+}
+
+/* ===================== Project Image ===================== */
+.project-image {
+  width: 100%;
+  height: clamp(150px, 25vh, 200px);
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: inherit;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* ===================== Text ===================== */
+.project-card h3 {
+  color: #ff8400;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* ===================== Tech Stack ===================== */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tech {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 132, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #ff8400;
+  transition: all 0.3s ease;
+}
+
+.tech:hover {
+  background-color: #ff8400;
+  color: #121212;
+  transform: translateY(-2px);
+}
+
+/* ===================== Buttons ===================== */
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.btn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+}
+
+.github-btn {
+  background-color: #1b1b1b;
+  color: #00d8ff;
+  border: 1px solid #00d8ff;
+}
+
+.github-btn:hover {
+  background-color: #00d8ff;
+  color: #1b1b1b;
+}
+
+.live-btn {
+  background-color: #ff8400;
+  color: #fff;
+}
+
+.live-btn:hover {
+  background-color: #ffa94d;
+}
+
+.live-btn.disabled {
+  background-color: #555;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* ===================== No Image ===================== */
+.project-card.no-image {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ===================== View More Buttons ===================== */
+.projects-buttons {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.view-more-btn,
+.show-less-btn {
+  background-color: transparent;
+  border: 2px solid #ff8400;
+  color: #ff8400;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+}
+
+.view-more-btn:hover,
+.show-less-btn:hover {
+  background-color: #ff8400;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ===================== Animations ===================== */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 60px 6%;
+  }
+
+  .projects-title {
+    font-size: 2rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .projects-section::before {
+    top: 6%;
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Portfolio Website",
+    "img": true,
+    "img_url1": "/projectImages/home.png",
+    "img_url2": "/projectImages/img2.png",
+    "img_url3": "/projectImages/img3.png",
+
+    "description": "A responsive personal portfolio built using React, featuring animated UI, grid effects, and reusable components.",
+    "tech": ["React", "CSS3", "JavaScript"],
+    "github_link": "https://github.com/yourusername/portfolio",
+    "Live": true,
+    "livedemo_link": "https://your-portfolio-live-demo.com"
+  },
+  {
+    "title": "Task Tracker App",
+    "img": true,
+    "img_url1": "/projectImages/home.png",
+
+    "description": "A full-stack task management system with CRUD operations and API integration.",
+    "tech": ["React", "Node.js", "MongoDB"],
+    "github_link": "https://github.com/yourusername/task-tracker",
+    "Live": false,
+    "livedemo_link": "#"
+  },
+  {
+    "title": "Portfolio Website",
+    "img": true,
+    "img_url1": "/projectImages/home.png",
+    "img_url2": "/projectImages/img2.png",
+    "img_url3": "/projectImages/img3.png",
+    "description": "A responsive personal portfolio built using React, featuring animated UI, grid effects, and reusable components.",
+    "tech": ["React", "CSS3", "JavaScript"],
+    "github_link": "https://github.com/yourusername/portfolio",
+    "Live": true,
+    "livedemo_link": "https://your-portfolio-live-demo.com"
+  }
+]
