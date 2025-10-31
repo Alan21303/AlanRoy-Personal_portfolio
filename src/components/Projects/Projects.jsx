@@ -75,14 +75,18 @@ const Projects = () => {
               className={`project-card ${!project.img ? "no-image" : ""}`}
               key={index}
             >
-              {/* Image */}
-              {project.img && (
+              {/* ✅ Image or Placeholder */}
+              {project.img ? (
                 <div className="project-image">
                   <img
                     src={project.img_url}
                     alt={`${project.title} preview`}
                     loading="lazy"
                   />
+                </div>
+              ) : (
+                <div className="project-placeholder">
+                  <span>{project.title}</span>
                 </div>
               )}
 
