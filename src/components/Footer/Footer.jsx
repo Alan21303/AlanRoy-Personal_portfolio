@@ -17,20 +17,29 @@ const Footer = () => {
 
         <div className="social-icons">
           <a
-            href="https://github.com/yourusername"
+            href="https://www.linkedin.com/in/alanroy2024"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             <FaLinkedinIn />
           </a>
-          <a href="mailto:your.email@example.com">
+
+          <a
+            href="https://github.com/Alan21303"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
+
+          <a
+            href="mailto:alanroy3002@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Email"
+          >
             <FaEnvelope />
           </a>
         </div>

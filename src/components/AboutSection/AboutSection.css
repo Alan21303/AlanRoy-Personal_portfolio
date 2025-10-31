@@ -90,6 +90,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .about-features li {
@@ -127,6 +128,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .skills-tags span {
@@ -225,6 +227,11 @@
   .about-section {
     padding: 40px 30px;
     gap: 30px;
+    top: -10vh;
+  }
+
+  .about-section::before {
+    top: 0%;
   }
 
   .about-container,

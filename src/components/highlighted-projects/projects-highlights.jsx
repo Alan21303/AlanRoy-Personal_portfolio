@@ -7,21 +7,31 @@ import projectsData from "./projectsData.json";
 const ProjectsHighlights = () => {
   const [activeIndexes, setActiveIndexes] = useState([]);
   const itemRefs = useRef([]);
+  const projectRefs = useRef([]);
 
+  // Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 800,
       mirror: true,
       once: false,
     });
+
+    const handleResize = () => {
+      AOS.refresh();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Optional: Intersection Observer (auto close on scroll out)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const index = parseInt(entry.target.dataset.index);
-          if (!entry.isIntersecting) {
+          if (window.innerWidth > 1000 && !entry.isIntersecting) {
             setActiveIndexes((prev) => prev.filter((i) => i !== index));
           }
         });
@@ -35,22 +45,24 @@ const ProjectsHighlights = () => {
 
   const toggleProject = (index) => {
     const isOpen = activeIndexes.includes(index);
+
     if (isOpen) {
+      // Close
       setActiveIndexes([]);
-      setTimeout(() => AOS.refresh(), 500);
     } else {
-      setActiveIndexes([]);
-      setTimeout(() => {
-        setActiveIndexes([index]);
-        AOS.refresh();
-      }, 500);
+      // Open only this project
+      setActiveIndexes([index]);
     }
+
+    // Refresh AOS for animation
+    setTimeout(() => AOS.refresh(), 300);
   };
 
   return (
-    <section className="steps _padd_top-bott80">
+    <section className="steps _padd_top-bott80" id="ProjectsHighlights">
       <div className="wrapp-content">
         <div className="content">
+          {/* Section Title */}
           <div className="about__title">
             <h2 className="about__title-h2 heading-hover">
               <span
@@ -72,9 +84,11 @@ const ProjectsHighlights = () => {
             </h2>
           </div>
 
+          {/* Projects List */}
           <div className="steps__wrapp">
             {projectsData.map((project, index) => {
               const isOpen = activeIndexes.includes(index);
+
               return (
                 <div
                   key={index}
@@ -82,6 +96,7 @@ const ProjectsHighlights = () => {
                   data-index={index}
                   className={`steps__item ${isOpen ? "active" : ""}`}
                 >
+                  {/* Project Header — Click anywhere to toggle */}
                   <div
                     className="steps__head"
                     onClick={() => toggleProject(index)}
@@ -89,24 +104,43 @@ const ProjectsHighlights = () => {
                     data-aos-delay="100"
                     data-aos-once="false"
                   >
-                    <h3 className="steps__head-title">
-                      <span className="steps__num">
-                        /{String(index + 1).padStart(3, "0")}
-                      </span>
-                      <span className="steps__title_project">
-                        {project.title}
-                      </span>
-                    </h3>
-                    <button className="toggle-btn">{isOpen ? "−" : "+"}</button>
+                    {/* Left-aligned number */}
+                    <span className="steps__num">
+                      /{String(index + 1).padStart(3, "0")}
+                    </span>
+
+                    {/* Right side: title + toggle button */}
+                    <div className="steps__head-right">
+                      <h3 className="steps__title_project">{project.title}</h3>
+                      <button
+                        className="toggle-btn"
+                        aria-label={
+                          isOpen ? "Collapse project" : "Expand project"
+                        }
+                      >
+                        {isOpen ? "−" : "+"}
+                      </button>
+                    </div>
                   </div>
 
-                  <div className={`steps__descript ${isOpen ? "open" : ""}`}>
+                  {/* Project Description */}
+                  <div
+                    className={`steps__descript ${isOpen ? "open" : ""}`}
+                    ref={(el) => (projectRefs.current[index] = el)}
+                    style={{
+                      maxHeight: isOpen
+                        ? `${projectRefs.current[index]?.scrollHeight}px`
+                        : "0px",
+                    }}
+                  >
                     <div className="steps__descript-wrapp">
+                      {/* Text Content */}
                       <div className="steps__descript-txt">
                         <div className="steps__desc-card">
                           <p className="steps__description-text">
                             {project.description}
                           </p>
+
                           <div className="steps__meta">
                             {project.date && (
                               <span className="steps__date">
@@ -119,13 +153,15 @@ const ProjectsHighlights = () => {
                               </span>
                             ))}
                           </div>
+
                           <div className="steps__tech-box">
-                            {project.tech.map((tech, i) => (
+                            {project.tech?.map((tech, i) => (
                               <span key={i} className="steps__tech-pill">
                                 {tech}
                               </span>
                             ))}
                           </div>
+
                           <div className="steps__links-box">
                             {project.github_link && (
                               <a
@@ -151,8 +187,10 @@ const ProjectsHighlights = () => {
                         </div>
                       </div>
 
+                      {/* Divider */}
                       <div className="divider-line"></div>
 
+                      {/* Image */}
                       <div className="steps__descript-img">
                         <div className="image-box">
                           {project.img_url1 && (

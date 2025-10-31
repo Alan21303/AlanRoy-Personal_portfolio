@@ -50,38 +50,29 @@ const AboutSection = () => {
             </ul>
 
             {/* Resume Button */}
-            <a
-              href="https://your-resume-url.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-block",
-                width: "100%", // Fills parent container
-                maxWidth: "200px",
-                padding: "12px 0px",
-                marginTop: "20px",
-                backgroundColor: "#ff5d00",
-                color: "#fff",
-                fontWeight: "600",
-                borderRadius: "8px",
-                textDecoration: "none",
-                transition: "all 0.3s ease",
-                boxShadow: "0 4px 15px rgba(255, 93, 0, 0.4)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform =
-                  "translateY(-3px) scale(1.05)";
-                e.currentTarget.style.boxShadow =
-                  "0 6px 20px rgba(255, 93, 0, 0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0) scale(1)";
-                e.currentTarget.style.boxShadow =
-                  "0 4px 15px rgba(255, 93, 0, 0.4)";
-              }}
-            >
-              Download Resume
-            </a>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <a
+                href="https://your-resume-url.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  width: "100%",
+                  maxWidth: "200px",
+                  padding: "12px 0px",
+                  backgroundColor: "#ff5d00",
+                  color: "#fff",
+                  fontWeight: "600",
+                  borderRadius: "8px",
+                  textDecoration: "none",
+                  transition: "all 0.3s ease",
+                  boxShadow: "0 4px 15px rgba(255, 93, 0, 0.4)",
+                  textAlign: "center",
+                }}
+              >
+                Download Resume
+              </a>
+            </div>
           </div>
 
           <div className="skills-container">
@@ -123,7 +114,7 @@ const AboutSection = () => {
               <h4>Cloud & DevOps</h4>
               <div className="skills-tags animated-tags">
                 <span>AWS</span>
-                <span>Azure</span>
+                <span>GCP</span>
                 <span>Firebase</span>
                 <span>Docker</span>
                 <span>Git</span>
@@ -145,9 +136,10 @@ const AboutSection = () => {
             <div className="skills-group">
               <h4>Machine Learning / AI</h4>
               <div className="skills-tags animated-tags">
-                <span>TensorFlow</span>
                 <span>PyTorch</span>
                 <span>Scikit-learn</span>
+                <span>Numpy</span>
+                <span>Pandas</span>
               </div>
             </div>
           </div>
