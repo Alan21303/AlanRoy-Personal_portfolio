@@ -1,62 +1,133 @@
 [
   {
-    "title": "Portfolio Website",
-    "img": true,
-    "img_url": "/projectImages/home.png",
-    "description": "A responsive personal portfolio built using React, featuring animated UI, grid effects, and reusable components.",
-    "tech": ["React", "CSS3", "JavaScript"],
-    "github_link": "https://github.com/yourusername/portfolio",
-    "Live": true,
-    "livedemo_link": "https://your-portfolio-live-demo.com"
-  },
-  {
-    "title": "Task Tracker App",
-    "img": true,
-    "img_url": "/projectImages/home.png",
-    "description": "A full-stack task management system with CRUD operations and API integration.",
-    "tech": ["React", "Node.js", "MongoDB"],
-    "github_link": "https://github.com/yourusername/task-tracker",
-    "Live": false,
-    "livedemo_link": "#"
-  },
-  {
-    "title": "Weather Dashboard",
+    "title": "Community Issue Tracker",
     "img": false,
-    "img_url": "#",
-    "description": "A real-time weather app that fetches API data and visualizes it with dynamic gradients.",
-    "tech": ["React", "OpenWeather API"],
-    "github_link": "https://github.com/yourusername/weather-dashboard",
+    "img_url": "",
+    "description": "A role-based ASP.NET Core web application that enables residents to report community issues, authorities to manage them, and admins to verify authority accounts. Built for a hackathon with a focus on speed, usability, and clarity.",
+    "tech": [
+      "ASP.NET Core",
+      "Entity Framework Core",
+      "PostgreSQL",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "github_link": "https://github.com/Alan21303/community-issue-tracker",
     "Live": false,
-    "livedemo_link": "#"
+    "livedemo_link": ""
   },
   {
-    "title": "Weather Dashboard",
+    "title": "Employee Management System",
     "img": false,
-    "img_url": "#",
-    "description": "A real-time weather app that fetches API data and visualizes it with dynamic gradients.",
-    "tech": ["React", "OpenWeather API"],
-    "github_link": "https://github.com/yourusername/weather-dashboard",
+    "img_url": "",
+    "description": "A simple Employee Management System built using ASP.NET Core MVC for performing CRUD operations on employees and departments, featuring a clean Bootstrap UI and SQLite database integration.",
+    "tech": [
+      "ASP.NET Core MVC",
+      "Entity Framework Core",
+      "SQLite",
+      "Bootstrap",
+      "HTML",
+      "CSS",
+      "jQuery"
+    ],
+    "github_link": "https://github.com/Alan21303/EmployeeManagement-.net-MVC",
     "Live": false,
-    "livedemo_link": "#"
+    "livedemo_link": ""
   },
   {
-    "title": "Portfolio Website",
+    "title": "Rossmann Sales Forecasting",
     "img": true,
-    "img_url": "/projectImages/home.png",
-    "description": "A responsive personal portfolio built using React, featuring animated UI, grid effects, and reusable components.",
-    "tech": ["React", "CSS3", "JavaScript"],
-    "github_link": "https://github.com/yourusername/portfolio",
+    "img_url": "/projectImages/rossmann-sales-forecast/rossmann.png",
+    "description": "An end-to-end machine learning pipeline for forecasting daily Rossmann store sales, featuring data preprocessing, model training, evaluation, and deployment through a Streamlit dashboard.",
+    "tech": [
+      "Python",
+      "XGBoost",
+      "Random Forest",
+      "Streamlit",
+      "Pandas",
+      "Scikit-learn"
+    ],
+    "github_link": "https://github.com/Alan21303/rossmann-sales-forecast",
+    "Live": false,
+    "livedemo_link": ""
+  },
+  {
+    "title": "Titanic Survival Prediction App",
+    "img": true,
+    "img_url": "/projectImages/titanic/titanic.jpg",
+    "description": "An end-to-end machine learning web app built with Streamlit to predict Titanic passenger survival, featuring Dockerized deployment, interactive UI, and tuned ML models for accuracy.",
+    "tech": [
+      "Python",
+      "Scikit-learn",
+      "Pandas",
+      "NumPy",
+      "Streamlit",
+      "Docker"
+    ],
+    "github_link": "https://github.com/Alan21303/titanic-end2end-ml",
+    "Live": false,
+    "livedemo_link": ""
+  },
+  {
+    "title": "Travello - Travel Website",
+    "img": false,
+    "img_url": "",
+    "description": "A responsive travel website built with Django and MongoDB that allows users to explore destinations, plan trips, view packages, and share reviews through a modern, user-friendly interface.",
+    "tech": ["Django", "HTML", "CSS", "JavaScript", "MongoDB"],
+    "github_link": "https://github.com/Alan21303/Travello",
+    "Live": false,
+    "livedemo_link": ""
+  },
+  {
+    "title": "AspNetCore To-Do App MVC",
+    "img": false,
+    "img_url": "",
+    "description": "A classic To-Do list web application built with ASP.NET Core MVC, featuring full CRUD functionality, a responsive Bootstrap interface, and data persistence using Entity Framework Core.",
+    "tech": [
+      "ASP.NET Core MVC",
+      "C#",
+      "Entity Framework Core",
+      "Bootstrap",
+      "jQuery"
+    ],
+    "github_link": "https://github.com/Alan21303/AspNetCore-ToDo-App-MVC",
+    "Live": false,
+    "livedemo_link": ""
+  },
+  {
+    "title": "Chronic Diseases Prediction System",
+    "img": true,
+    "img_url": "/projectImages/Chronic-Diseases-Prediction/Chronic-Diseases-Prediction.png",
+    "description": "A machine learning-based web application built with Python that predicts the likelihood of multiple chronic diseases using trained models and health data inputs through a simple interactive interface.",
+    "tech": ["Python", "Flask", "Scikit-learn", "Pandas", "NumPy"],
+    "github_link": "https://github.com/Alan21303/Chronic-Diseases-Prediction-System",
     "Live": true,
-    "livedemo_link": "https://your-portfolio-live-demo.com"
+    "livedemo_link": "https://chronic-diseases-prediction-system-azdpwwbs3f9zynp42fwacu.streamlit.app/"
   },
   {
-    "title": "Task Tracker App",
+    "title": "Expenses Tracker – ASP.NET Core MVC",
     "img": true,
-    "img_url": "/projectImages/home.png",
-    "description": "A full-stack task management system with CRUD operations and API integration.",
-    "tech": ["React", "Node.js", "MongoDB"],
-    "github_link": "https://github.com/yourusername/task-tracker",
+    "img_url": "/projectImages/Expensestracker/viewExpenses-window.png",
+    "description": "A personal finance management app built with ASP.NET Core MVC and Entity Framework Core, enabling users to record, categorize, and analyze expenses with Google SSO authentication and responsive Bootstrap UI.",
+    "tech": [
+      "ASP.NET Core MVC",
+      "Entity Framework Core",
+      "MS SQL Server",
+      "Bootstrap 5",
+      "Google OAuth"
+    ],
+    "github_link": "https://github.com/Alan21303/Expenses-Tracker-ASP.NET-Mvc",
     "Live": false,
-    "livedemo_link": "#"
+    "livedemo_link": ""
+  },
+  {
+    "title": "DoAnyJob – Job Finder Website",
+    "img": true,
+    "img_url": "/projectImages/DoAnyJob/Doanyjob.png",
+    "description": "A user-friendly job portal designed to connect job seekers with locally available opportunities, featuring an intuitive interface for browsing, applying, and posting jobs within the community.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "github_link": "https://github.com/Alan21303/Doanyjob",
+    "Live": false,
+    "livedemo_link": ""
   }
 ]

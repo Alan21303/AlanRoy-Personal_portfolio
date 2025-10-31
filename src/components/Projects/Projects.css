@@ -176,6 +176,9 @@
   transition: all 0.3s ease;
 }
 
+.project-card::after {
+  pointer-events: none;
+}
 .tech:hover {
   background-color: #ff8400;
   color: #121212;

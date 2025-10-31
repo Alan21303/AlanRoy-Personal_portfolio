@@ -7,7 +7,7 @@ const Projects = () => {
   const [showAll, setShowAll] = useState(false); // tracks if projects are expanded
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1000);
 
-  // Handle screen resize
+  // ✅ Handle screen resize
   useEffect(() => {
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth >= 1000);
@@ -16,7 +16,7 @@ const Projects = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Animate project cards
+  // ✅ Animate project cards when visible
   useEffect(() => {
     const cards = document.querySelectorAll(".project-card");
     const observer = new IntersectionObserver(
@@ -35,22 +35,19 @@ const Projects = () => {
     return () => observer.disconnect();
   }, [visibleCount, showAll, isLargeScreen]);
 
-  // Handle "View More"
+  // ✅ Handle "View More"
   const handleViewMore = () => {
     if (!isLargeScreen) {
-      // Small screens: expand all projects
       setShowAll(true);
       setVisibleCount(projectsData.length);
     } else {
-      // Large screens: show next 4 projects
       setVisibleCount((prev) => Math.min(prev + 4, projectsData.length));
     }
   };
 
-  // Handle "Show Less"
+  // ✅ Handle "Show Less"
   const handleShowLess = () => {
     if (!isLargeScreen) {
-      // Small screens: collapse all projects
       setShowAll(false);
       setVisibleCount(4);
     } else {
@@ -60,7 +57,7 @@ const Projects = () => {
 
   return (
     <section className="projects-section" id="projects">
-      {/* Heading only visible on large screens or when expanded */}
+      {/* Heading */}
       {(isLargeScreen || showAll) && (
         <h2 className="projects-title animate-title">
           <span className="title-brackets">{"<"}</span>
@@ -70,7 +67,7 @@ const Projects = () => {
         </h2>
       )}
 
-      {/* Projects container */}
+      {/* Projects Grid */}
       {(isLargeScreen || showAll) && (
         <div className="projects-container">
           {projectsData.slice(0, visibleCount).map((project, index) => (
@@ -78,6 +75,7 @@ const Projects = () => {
               className={`project-card ${!project.img ? "no-image" : ""}`}
               key={index}
             >
+              {/* Image */}
               {project.img && (
                 <div className="project-image">
                   <img
@@ -88,9 +86,11 @@ const Projects = () => {
                 </div>
               )}
 
+              {/* Title & Description */}
               <h3>{project.title}</h3>
               <p>{project.description}</p>
 
+              {/* Tech Stack */}
               <div className="tech-stack">
                 {project.tech.map((t, i) => (
                   <span key={i} className="tech">
@@ -99,7 +99,9 @@ const Projects = () => {
                 ))}
               </div>
 
+              {/* Links */}
               <div className="project-links">
+                {/* GitHub Button */}
                 {project.github_link && (
                   <a
                     href={project.github_link}
@@ -111,23 +113,28 @@ const Projects = () => {
                   </a>
                 )}
 
-                <button
-                  className={`btn live-btn ${!project.Live ? "disabled" : ""}`}
-                  disabled={!project.Live}
-                  onClick={() =>
-                    project.Live &&
-                    window.open(project.livedemo_link, "_blank", "noopener")
-                  }
-                >
-                  {project.Live ? "Live Demo" : "Coming Soon"}
-                </button>
+                {/* Live Demo Button — only if Live is true */}
+                {project.Live && project.livedemo_link && (
+                  <a
+                    href={
+                      project.livedemo_link.startsWith("http")
+                        ? project.livedemo_link
+                        : `https://${project.livedemo_link}`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn live-btn"
+                  >
+                    Live Demo
+                  </a>
+                )}
               </div>
             </div>
           ))}
         </div>
       )}
 
-      {/* Buttons */}
+      {/* Buttons for View More / Show Less */}
       <div className="projects-buttons">
         {(!isLargeScreen && !showAll) || visibleCount < projectsData.length ? (
           <button className="btn view-more-btn" onClick={handleViewMore}>

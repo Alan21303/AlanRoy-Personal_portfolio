@@ -3,18 +3,25 @@ import "./Experience.css";
 
 const experiences = [
   {
-    year: "2025 - Present",
-    title: "Software Engineering Trainee - G10x",
+    year: "Jan 2025 – May 2025",
+    title: "Intern – Software Engineer | Triaxia Infotech Pvt Ltd",
     description:
-      "Working on full-stack projects involving React, Node.js, and REST APIs. Collaborating with teams to deliver scalable enterprise solutions.",
-    skills: ["React", "Node.js", "REST APIs", "Git", "Agile"],
+      "Developed backend APIs using Django and optimized relational databases. Built Angular-based admin dashboards for internal use. Participated in the full Agile SDLC process, including requirements gathering, coding, testing, and deployment. Supported Azure Data Factory pipeline integration for seamless data flow across systems.",
+    skills: [
+      "Django",
+      "Angular",
+      "Azure Data Factory",
+      "REST APIs",
+      "Agile",
+      "PostgreSQL",
+    ],
   },
   {
-    year: "2024",
-    title: "Python Developer Intern - Freelance Projects",
+    year: "Jan 2023 – Mar 2023",
+    title: "Intern – Python Developer | ReverTech IT Solution",
     description:
-      "Built automation scripts and data-driven solutions using Python and Flask. Improved system performance and reduced manual work by 40%.",
-    skills: ["Python", "Flask", "APIs", "Automation"],
+      "Developed APIs in Flask for data services and integrated them with a React front-end to enhance dashboard interactivity. Improved backend-to-frontend communication, performed unit testing, and optimized performance for better user experience.",
+    skills: ["Python", "Flask", "React", "APIs", "Unit Testing"],
   },
 ];
 
