@@ -52,7 +52,7 @@ const AboutSection = () => {
             {/* Resume Button */}
             <div style={{ display: "flex", justifyContent: "center" }}>
               <a
-                href="https://your-resume-url.com"
+                href="https://drive.google.com/file/d/1z5zhtpATjAfdthcRVYm117r0fz5-IpTY/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
